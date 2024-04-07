@@ -57,6 +57,7 @@ function validate() {
         }
     }
 
+    checkAndAssignValue('addressPerson', 'addressPerson', '<p>Anrede fehlt!</p>');
     checkAndAssignValue('surname', 'surname', '<p>Nachname fehlt!</p>');
     checkAndAssignValue('firstName', 'firstname', '<p>Vorname fehlt!</p>');
     checkAndAssignValue('phoneNumber', 'phonenumber', '<p>Telefonnummer fehlt!</p>');
@@ -67,7 +68,7 @@ function validate() {
         errorType = true;
         surname = surname.toUpperCase();
         firstname = firstname.toUpperCase();
-        personData = {'surname': surname, 'firstname': firstname, 'phonenumber': phonenumber, 'birthdate': birthdate, 'number':number};
+        personData = {'addressPerson':addressPerson, 'surname': surname, 'firstname': firstname, 'phonenumber': phonenumber, 'birthdate': birthdate, 'number':number};
         toast(errorType);
         response(personData);
     } else {

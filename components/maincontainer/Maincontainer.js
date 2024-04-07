@@ -19,6 +19,18 @@ export default function MainContainer() {
         output += "<div class='wrapperRight wrapper'>";
             output += "<img src='../assets/img/contact.png' alt='contactIcon'>";
             output += "<h2 class='mainTitle'>Jetzt Kontakt aufnehmen!</h2>";
+            output += "<div class='formGroup' data-section='adress'>";
+                output += "<h2 class='title'>Anrede</h2>";
+                output += "<div class='formGroupNameWrapper'>";
+                    output += "<select id='addressPerson'>";
+                        output += "<option value='' selected disabled hidden>Auswählen:</option>";
+                        output += "<option value='Mann'>Herr</option>";
+                        output += "<option value='Frau'>Frau</option>";
+                        output += "<option value='Divers'>Divers</option>";
+                        output += "<option value='Keine-Angabe'>Keine Angabe</option>";
+                    output += "</select>";
+                output += "</div>";
+            output += "</div>";
             output += "<div class='formGroup' data-section='name'>";
                 output += "<h2 class='title'>Ihr Name</h2>";
                 output += "<div class='formGroupNameWrapper'>";

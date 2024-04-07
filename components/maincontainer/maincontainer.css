@@ -115,6 +115,36 @@
     background-color: var(--main);
 }
 
+.formGroup select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Roboto-Bold', sans-serif;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.288);
+    color: grey;
+    border: none;
+    appearance: none; 
+    background-color: white; 
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23707070" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    cursor: pointer;
+}
+
+.formGroup select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--tertiary);
+}
+
+.formGroup select option {
+    background-color: white; 
+    color: grey; 
+    padding: 10px; 
+    font-weight: 400;
+}
+
 @media only screen and (max-width: 800px){
     #maincontainerWrapper{
         display: flex;
