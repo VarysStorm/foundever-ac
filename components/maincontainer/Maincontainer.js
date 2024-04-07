@@ -2,6 +2,8 @@ export default function MainContainer() {
     var output = "";
 
     output += "<div class='wrapper'>";
+        output += '<img src="../assets/img/contact.png" alt="contactIcon">'
+        output += '<h2 class="mainTitle">Jetzt Kontakt aufnehmen!</h2>';
         output += "<div class='form-group' data-section='name'>";
             output += "<input type='text' id='surname' name='Nachname' placeholder='Nachname'>";
             output += "<input type='text' id='firstName' name='Vorname' placeholder='Vorname'>";

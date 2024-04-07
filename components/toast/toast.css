@@ -3,14 +3,16 @@
     right: 1%;
     bottom: 1%;
     z-index: 9999;
+    min-width: 350px;
 }
 
 .toast {
-    background-color: #007bff;
+    background-color: var(--tertiary);
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
 .toast h2 {
@@ -22,12 +24,13 @@
 .toast p {
     margin: 5px 0 0;
     font-size: 16px;
+    color:white;
 }
 
-.falseToast {
-    background-color: #dc3545;
+h2.falseToast{
+    color: red;
 }
 
-.trueToast {
-    background-color: #28a745;
+h2.trueToast{
+    color: white;
 }

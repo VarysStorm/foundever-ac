@@ -1,6 +1,6 @@
-import MainContainer from "../components/maincontainer/Maincontainer.js";
-import Toast from "../components/toast/Toast.js";
-import ResponseContainer from "./ResponseContainer.js";
+import MainContainer from "./components/maincontainer/Maincontainer.js";
+import Toast from "./components/toast/Toast.js";
+import ResponseContainer from "./components/responsecontainer/ResponseContainer.js";
 
 $(function App() {
     
@@ -98,7 +98,7 @@ function toastOut( type=null ){
     if(!type){
         setTimeout(function() {
             $('#toast').fadeOut().addClass('hidden');
-        }, 3600);
+        }, 5400);
    }else{
         $('#toast').fadeOut().addClass('hidden');
    }

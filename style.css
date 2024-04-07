@@ -1,6 +1,20 @@
 @import url('/components/maincontainer/maincontainer.css');
 @import url('/components/toast/toast.css');
+@import url('/components/responsecontainer/ResponseContainer.css');
 
+@font-face {
+    font-family: 'Roboto-Medium';
+    src: url('assets/fonts/Roboto-Medium.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url('assets/fonts/Roboto-Bold.ttf') format('truetype'); 
+    font-weight: Bold;
+    font-style: normal;
+}
 :root{
     --main: #5959eb;
     --secondary:#6969ed;
@@ -8,12 +22,20 @@
 }
 
 body {
-    background-color: var(--main);
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
 }
 body p, body h1{
-    color:white;
+    color:black;
 } 
 
+.logo{
+    text-align: center;
+}
+
+.logo img{
+
+}
 
 .hidden{
     display: none;

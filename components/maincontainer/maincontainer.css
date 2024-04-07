@@ -4,13 +4,25 @@
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: var(--secondary);
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.288);
+    text-align: center;
+}
+
+#mainContainer img{
+    max-width: 65px;
+}
+
+#mainContainer .mainTitle{
+    font-size: 24px;
+    text-align: center;
+    font-family: 'Roboto-Bold', sans-serif;
+    color: white;
 }
 
 .form-group {
@@ -29,22 +41,41 @@
 .form-group input[type='number'] {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+    border-radius: 8px;
     box-sizing: border-box;
     font-size: 16px;
+    font-family: 'Roboto-Bold', sans-serif;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.288);
+    color:grey;
+    border: none;
 }
+
+.form-group[data-section='name']{
+    display: flex;
+    flex-direction: row;   
+    justify-content: space-between 
+}
+.form-group[data-section='name'] input{
+    width: 45%;
+}
+
+
 
 .form-group button {
     padding: 10px 20px;
-    background-color: #007bff;
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
     color: #fff;
     font-size: 16px;
+    background-color: var(--tertiary); /* Ausgangsfarbe des Buttons */
+    transition: background-color 0.4s ease-in-out;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
 }
 
+
 .form-group button:hover {
-    background-color: #0056b3;
+    background-color: var(--main);
 }
