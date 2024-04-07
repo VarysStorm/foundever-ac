@@ -29,13 +29,10 @@
     color:white;
 }
 
-h2.falseToast{
-    color: red;
-}
-
-h2.trueToast{
+.toast h2{
     color: white;
 }
+
 
 .toastIMG{
     width: 50px;

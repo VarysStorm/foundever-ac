@@ -173,7 +173,7 @@ function responseSend(){
     
     setTimeout(function() {
         location.reload();
-    }, 7200);
+    }, 2400);
 
     
 }
