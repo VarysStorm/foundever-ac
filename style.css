@@ -1,0 +1,20 @@
+@import url('/components/maincontainer/maincontainer.css');
+@import url('/components/toast/toast.css');
+
+:root{
+    --main: #5959eb;
+    --secondary:#6969ed;
+    --tertiary: #5050d3;
+}
+
+body {
+    background-color: var(--main);
+}
+body p, body h1{
+    color:white;
+} 
+
+
+.hidden{
+    display: none;
+}

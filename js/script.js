@@ -1,5 +1,5 @@
 import MainContainer from "../components/maincontainer/Maincontainer.js";
-import Toast from "../components/maincontainer/toast/Toast.js";
+import Toast from "../components/toast/Toast.js";
 import ResponseContainer from "./ResponseContainer.js";
 
 $(function App() {
