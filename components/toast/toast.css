@@ -19,6 +19,8 @@
     margin: 0;
     font-size: 20px;
     font-weight: bold;
+    font-size: 24px;
+    padding: 5%;
 }
 
 .toast p {
@@ -33,4 +35,24 @@ h2.falseToast{
 
 h2.trueToast{
     color: white;
+}
+
+.toastIMG{
+    width: 50px;
+    height: 50px;
+}
+
+.falseToastHeader .toastIMG {
+    content: url("/assets/img/thumbsdown.png");
+}
+.trueToastHeader .toastIMG {
+    content: url("/assets/img/thumbsup.png");
+}
+
+
+
+#ToastHeader{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }

@@ -1,12 +1,14 @@
 import MainContainer from "./components/maincontainer/Maincontainer.js";
 import Toast from "./components/toast/Toast.js";
 import ResponseContainer from "./components/responsecontainer/ResponseContainer.js";
+import SuccessContainer from "./components/successcontainer/Successcontainer.js";
 
 $(function App() {
     
     $('#mainContainer').html(MainContainer);
     $('#toast').html(Toast);
     $('#responseContainer').html(ResponseContainer);
+    $('#successContainer').html(SuccessContainer);
     $('#sendInput').on('click',function(){
         validate();
     });
@@ -71,6 +73,23 @@ function validate() {
     } else {
         toast(errorType, error);
     }
+
+    /* Hier könnte man als Beispiel die Daten an das Backend (hier PHP als Beispiel) übergeben
+        $.ajax({
+            url: 'ContactData.php', 
+            method: 'POST', 
+            data: { 'surname': surname, 'firstname': firstname, 'phonenumber': phonenumber, 'birthdate': birthdate, 'number':number }, 
+            success: function(response) {
+                toast(type, message); // Hier müsste man die Toast Funktion etwas erweitern um eine if Klausel welche prüft ob data !=null ist
+        },
+        error: function(error) {
+            toast(type, message);
+        }
+        });
+
+
+    */
+
 }
 
 /* User-Feedback-Popup-Logik */
@@ -79,12 +98,14 @@ function toast(type, data=null) {
     switch (type) {
         case false:
             $('#ToastTitle').html('Fehler').addClass('falseToast');
+            $('#ToastHeader').addClass('falseToastHeader');
             $('#ToastDesc').html('Fehlerhafte Angaben: ' + data);
             $('#toast').fadeIn('slow').removeClass('hidden');
             toastOut();
             break;
         case true:
             $('#ToastTitle').html('Erfolg').addClass('trueToast');
+            $('#ToastHeader').addClass('trueToastHeader');
             $('#ToastDesc').html('Alle Angaben waren korrekt!');
             $('#toast').fadeIn('slow').removeClass('hidden');
             toastOut();
@@ -146,23 +167,13 @@ function checkDivision(number) {
 
 
 function responseSend(){
-    location.reload();
+    
+    $('#successContainer').fadeIn('slow').removeClass('hidden');
+    $('#responseContainer').fadeOut().addClass('hidden');
+    
+    setTimeout(function() {
+        location.reload();
+    }, 7200);
 
-    /* Hier könnte man als Beispiel die Daten an das Backend (hier PHP als Beispiel) übergeben
-        $.ajax({
-            url: 'example.php', 
-            method: 'GET', 
-            data: { key1: 'value1', key2: 'value2' }, // Daten, die mit der Anfrage gesendet werden sollen
-            success: function(response) {
-        // Erfolgsfall: Die Funktion wird aufgerufen, wenn die Anfrage erfolgreich abgeschlossen wurde
-        console.log('Antwort erhalten:', response);
-        },
-        error: function(xhr, status, error) {
-        // Fehlerfall: Die Funktion wird aufgerufen, wenn ein Fehler auftritt
-            console.error('Fehler:', status, error);
-        }
-        });
-
-
-    */
+    
 }
