@@ -23,7 +23,7 @@ export default function ResponseContainer() {
             responseOutput += "<p id='output_number'></p>";
         responseOutput += "</div>";
         responseOutput += "<div data-section='outputButton'>";
-            responseOutput += "<button id='sendOutput'>Absenden</button>";
+            responseOutput += "<button id='sendOutput'>Super!</button>";
         responseOutput += "</div>";
     responseOutput += "</div>";
 

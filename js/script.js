@@ -1,5 +1,5 @@
-import MainContainer from "./Maincontainer.js";
-import Toast from "./Toast.js";
+import MainContainer from "../components/maincontainer/Maincontainer.js";
+import Toast from "../components/maincontainer/toast/Toast.js";
 import ResponseContainer from "./ResponseContainer.js";
 
 $(function App() {
@@ -7,10 +7,17 @@ $(function App() {
     $('#mainContainer').html(MainContainer);
     $('#toast').html(Toast);
     $('#responseContainer').html(ResponseContainer);
-    jQuery('#sendInput').on('click',function(){
+    $('#sendInput').on('click',function(){
         validate();
-
     });
+    $('#toast').on('click',function(){
+        toastOut('manuell');
+    });
+    $('#sendOutput').on('click',function(){
+        responseSend();
+    });
+    
+
 });
 
 /* Erste Eingaben Validerung */
@@ -60,8 +67,7 @@ function validate() {
         firstname = firstname.toUpperCase();
         personData = {'surname': surname, 'firstname': firstname, 'phonenumber': phonenumber, 'birthdate': birthdate, 'number':number};
         toast(errorType);
-        //console.log(personData);
-        response(personData)
+        response(personData);
     } else {
         toast(errorType, error);
     }
@@ -74,15 +80,31 @@ function toast(type, data=null) {
         case false:
             $('#ToastTitle').html('Fehler').addClass('falseToast');
             $('#ToastDesc').html('Fehlerhafte Angaben: ' + data);
+            $('#toast').fadeIn('slow').removeClass('hidden');
+            toastOut();
             break;
         case true:
             $('#ToastTitle').html('Erfolg').addClass('trueToast');
             $('#ToastDesc').html('Alle Angaben waren korrekt!');
+            $('#toast').fadeIn('slow').removeClass('hidden');
+            toastOut();
             break;
         default:
             console.error('Ungültiger Wert für type-Parameter in der toast-Funktion.');
     }
 }
+
+function toastOut( type=null ){
+    if(!type){
+        setTimeout(function() {
+            $('#toast').fadeOut().addClass('hidden');
+        }, 3600);
+   }else{
+        $('#toast').fadeOut().addClass('hidden');
+   }
+}
+
+/* Ausgabe */
 
 function response(data) {
     for (let key in data) {
@@ -97,6 +119,7 @@ function response(data) {
             $('#output_' + key).html(data[key]);
         }
     }
+    $('#responseContainer').fadeIn('slow').removeClass('hidden');
 }
 
 function checkDivision(number) {
@@ -122,4 +145,24 @@ function checkDivision(number) {
 }
 
 
+function responseSend(){
+    location.reload();
 
+    /* Hier könnte man als Beispiel die Daten an das Backend (hier PHP als Beispiel) übergeben
+        $.ajax({
+            url: 'example.php', 
+            method: 'GET', 
+            data: { key1: 'value1', key2: 'value2' }, // Daten, die mit der Anfrage gesendet werden sollen
+            success: function(response) {
+        // Erfolgsfall: Die Funktion wird aufgerufen, wenn die Anfrage erfolgreich abgeschlossen wurde
+        console.log('Antwort erhalten:', response);
+        },
+        error: function(xhr, status, error) {
+        // Fehlerfall: Die Funktion wird aufgerufen, wenn ein Fehler auftritt
+            console.error('Fehler:', status, error);
+        }
+        });
+
+
+    */
+}
