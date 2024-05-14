@@ -17,14 +17,14 @@
     font-style: normal;
 }
 :root{
-    --main: #5959eb;
-    --secondary:#6969ed;
-    --tertiary: #5050d3;
+    --main: #ed1c24;
+    --secondary:#950006;
+    --tertiary: #ff4f55;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: white;
+    background-color: #f3f3f3;
 }
 body p, body h1{
     color:black;
@@ -37,7 +37,7 @@ body p, body h1{
 
 .logo img{
     margin: 1%;
-    max-width: 400px;
+    max-width: 150px;
 }
 
 .hidden{
@@ -48,4 +48,12 @@ body p, body h1{
     .logo img{
         width: -webkit-fill-available;
     }
+}
+.wrapperLeft .bodyWrapper a{
+    text-decoration: none;
+    color:black;
+    transition: all 0.4s ease-in-out;
+}
+.wrapperLeft .bodyWrapper a:hover{
+    color:var(--main);
 }
