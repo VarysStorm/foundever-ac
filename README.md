@@ -1,6 +1,6 @@
 # Kurzanleitung
 
-Das 'Projekt' wurde als Arbeitsprobe in einem Bewerbungsprozess eingereicht. 
+Das 'Projekt' wurde als Arbeitsprobe in einem Bewerbungsprozess eingereicht. Es sollte ein einfaches und simples Web-Formular gebaut werden, dass ein User Feedback gibt, ob die Eingaben korrekt oder fehlerhaft sind. Mit jenen Werten sollte dann ebenfalls Feedback generiert werden und das Zahlen-Feld letztlich nur unter bestimmten Vorraussetzungen im zentrierten Pop-Up angezeigt werden.
 
 Dies ist eine Kurzanleitung für die Verwendung und Anpassung der Komponenten in diesem Projekt.
 
